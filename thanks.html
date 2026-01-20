@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block headblock %}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Poor+Story" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container text-center" style="margin-top: 100px;">
+  <h1 class="head_mansi">🎉 Thank You for Your Feedback!</h1>
+  <p style="font-size: 20px; color: #eddaf8;">Your response has been recorded successfully.</p>
+  <a href="{% url 'home' %}" class="btn btn-primary" style="margin-top: 20px;">
+    <i class="fa fa-home"></i> Back to Home
+  </a>
+</div>
+
+<style>
+.head_mansi {
+  color: #ece1e1;
+  font-size: 70px;
+  font-family: 'Poor Story', cursive;
+  text-align: center;
+}
+</style>
+{% endblock %}

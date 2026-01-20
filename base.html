@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>FOODY</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Cairo|Roboto|Montserrat" rel="stylesheet">
+{% block headblock %}{% endblock %}
+
+ <!-- Inline background image -->
+    <style>
+        body {
+            background-image: url("{% static 'images/pic.jpg!d' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed; /* optional: keep fixed while scrolling */
+        }
+        .navbar {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+  <body>
+    <nav class="navbar navbar-default mynav" role="navigation" id="navbar">
+      <div class="container">
+        <div class="navbar-header">
+          {% if user.is_authenticated %}
+            <a class="navbar-brand btn btn-default" href="{% url 'test' %}">
+              <span class="glyphicon glyphicon-home"></span>
+            </a>
+             <span style="font-size: 24px; font-weight: bold; margin-left: 10px;">FOODY</span>
+          {% else %}
+            <a class="navbar-brand btn btn-default" href="{% url 'home' %}">
+              <span class="glyphicon glyphicon-home"></span> 
+            </a>
+             <span style="font-size: 24px; font-weight: bold; margin-left: 10px;">FOODY</span>
+          {% endif %}
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+          {% if user.is_authenticated %}
+            <li><a href="{% url 'foody_1:logout' %}" class="btn btn-primary navbar-btn">Logout</a></li>
+          {% else %}
+            <li><a href="{% url 'foody_1:login' %}" class="btn btn-primary navbar-btn">Login</a></li>
+            <li><a href="{% url 'foody_1:signup' %}" class="btn btn-primary navbar-btn">Sign Up</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
+<div class="container-fluid" style="margin-top: 100
+px; text-align: center;">
+  <div class="jumbotron" style="background-color: rgba(255, 255, 255, 0);">
+    <h1 style="color: white;">FOODY</h1>
+<p style="color: #f9e79f;">It recommends food based on your mood.</p>
+
+    <p style="color: #ffffff;">The first food recommending and delivery app that gives your mood the prime importance.</p>
+  </div>
+</div>
+
+    <div class="container mycontent">
+      {% block content %}{% endblock %}
+    </div>
+
+    <canvas id="canvas"></canvas>
+<!-- jQuery and Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+  </body>
+</html>

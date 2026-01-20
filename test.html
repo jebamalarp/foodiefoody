@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% load static %}
+{% block headblock %}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="{% static 'simplesocial/css/image.css' %}"> -->
+  <link href="https://fonts.googleapis.com/css?family=Poor+Story" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+  <h2 class="confused">Cuisines</h2>
+  <div class="row text-center">
+    <div class="col-lg-4 col-xs-6 thumbnail hello">
+      <a href="{% url 'foody_1:northindian' %}">
+        <img src="https://res.cloudinary.com/gagan/image/upload/v1746781582/ryt551adbupfajfgruhi.jpg" alt="North Indian">
+        <p>North Indian</p>
+      </a>
+    </div>
+
+    <div class="col-lg-4 col-xs-6 thumbnail hello">
+      <a href="{% url 'foody_1:southindian' %}">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/072/201/710/small/bengali-thali-a-vibrant-and-aromatic-indian-feast-free-photo.jpg" alt="South Indian">
+        <p>South Indian</p>
+      </a>
+    </div>
+
+    <div class="col-lg-4 col-xs-6 thumbnail hello">
+      <a href="{% url 'foody_1:italian' %}">
+        <img src="https://pic.uhomes.com/onlineblog/cdn/uploads/2024/03/1.jpg" alt="Italian">
+        <p>Italian</p>
+      </a>
+    </div>
+
+    <div class="col-lg-4 col-xs-6 thumbnail hello">
+      <a href="{% url 'foody_1:chinese' %}">
+        <img src="https://assets.foodhub.com/images/thumbnails/chinese_rice_seafood_017_692x306.jpg" alt="Chinese">
+        <p>Chinese</p>
+      </a>
+    </div>
+
+    <div class="col-lg-4 col-xs-6 thumbnail hello">
+      <a href="{% url 'foody_1:confused' %}">
+        <img src="https://t3.ftcdn.net/jpg/13/17/83/64/360_F_1317836456_OCMF8dfPBa9F1p0uB0orPA4m5N8sLi23.jpg" alt="Confused">
+        <p>Feelin MooDy? Can't decide? 😄</p>
+      </a>
+    </div>
+
+    <div class="col-lg-4 col-xs-6 thumbnail hello">
+      <a href="{% url 'foody_1:continental' %}">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDmDB5Ggi12HJu8rO8GokF8G4O9IpFrOmEYGExFZZUU1LAs8UQmZpy-WsjPNzLkl1Mfy0&usqp=CAU" alt="Continental">
+        <p>Continental</p>
+      </a>
+    </div>
+
+    <div class="col-lg-4 col-xs-6 thumbnail hello">
+      <a href="{% url 'foody_1:fastfood' %}">
+        <img src="https://e7.pngegg.com/pngimages/317/251/png-clipart-fast-food-junk-food-hamburger-fried-chicken-kfc-fast-food-menu-flyer-food-recipe.png" alt="Fast Food">
+        <p>Fast Food</p>
+      </a>
+    </div>
+
+    <div class="col-lg-4 col-xs-6 thumbnail hello">
+      <a href="{% url 'foody_1:bev' %}">
+        <img src="https://static.vecteezy.com/system/resources/previews/046/369/201/non_2x/multicolored-cocktails-with-berries-on-black-background-photo.jpg" alt="Beverages">
+        <p>Beverages</p>
+      </a>
+    </div>
+
+    <div class="col-lg-4 col-xs-6 thumbnail hello">
+      <a href="{% url 'foody_1:des' %}">
+        <img src="https://thumbs.dreamstime.com/b/ai-illustration-luxurious-dessert-table-various-gourmet-pastries-cakes-elegant-golden-plates-ai-illustration-335294849.jpg" alt="Desserts">
+        <p>Desserts</p>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .hello {
+    font-size: 20px;
+    text-align: center;
+    height: 320px;
+    width: 370px;
+    margin: auto;
+  }
+  .confused {
+    font-size: 50px;
+    font-family: 'Poor Story', cursive;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+</style>
+{% endblock %}
