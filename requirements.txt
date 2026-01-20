@@ -1,0 +1,5 @@
+django==3.2.25
+django-bootstrap3
+numpy
+scikit-learn
+bcrypt
