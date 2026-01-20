@@ -1,4 +1,25 @@
-<!-- {% block content %}
-  <h1>Signup</h1>
-  <form>...</form>
-{% endblock %} -->
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap3 %}
+
+{% block headblock %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>SIGN UP!</h1>
+
+    {% if form.errors %}
+        <div class="alert alert-danger">
+            {{ form.errors }}
+        </div>
+    {% endif %}
+
+    <form method="POST" class="form">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input type="submit" value="Sign Up" class="btn btn-default">
+    </form>
+</div>
+{% endblock %}
